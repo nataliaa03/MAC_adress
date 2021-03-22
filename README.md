@@ -2,7 +2,14 @@
 
 Pass mac address and get the company name.
 Correct format mac addres: XX:XX:XX:XX:XX:XX <br>
-where each X is a hexadecimal digit (0 to 9 or A to F).
+where each X is a hexadecimal digit (0 to 9 or A to F). <br>
+
+
+The app accepts also the OUI for the manufacture of a router (the first three octets XX-XX-XX). <br>
+format: XXXXXX <br>
+for example: 001422 (Dell Inc) <br>
+
+
 
 Program using API of web app https://macaddress.io.
 
