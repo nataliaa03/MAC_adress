@@ -11,13 +11,16 @@ def get_data():
     mac_address = str(sys.argv[1]) #user's argument in cmd
     url = r'https://api.macaddress.io/v1?apiKey={}&output={}&search={}'.format(API_KEY, OUTPUT, mac_address)
     print("URL: ", url)
-    response = requests.get(url=url, headers=headers)
-    json_data = response.json() 
-    company_name = json_data["vendorDetails"]["companyName"]
-    if company_name == '':
-        print("No company name assigned to this MAC adress.") #taking the value of the key: company name
-    else:
-        print("COMPANY NAME: ", company_name)
+    try:
+        response = requests.get(url=url, headers=headers)
+        json_data = response.json()
+        company_name = json_data["vendorDetails"]["companyName"]
+        if company_name == '':
+            print("No company name assigned to this MAC adress.") #taking the value of the key: company name
+        else:
+            print("COMPANY NAME: ", company_name)
+    except:
+        print("Couldn't get data. Check if the format of MAC address is correct.")
 
 
 if __name__ == "__main__":
