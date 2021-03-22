@@ -1,5 +1,9 @@
 # MAC_adress
 
+Pass mac address and get the company name.
+Correct format mac addres: XX:XX:XX:XX:XX:XX <br>
+where each X is a hexadecimal digit (0 to 9 or A to F).
+
 Program using API of web app https://macaddress.io.
 
 ## Installation requirements
