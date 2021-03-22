@@ -2,35 +2,39 @@
 
 Program using API of web app https://macaddress.io.
 
-## Requirements
+## Installation requirements
 
-I used Python language so the reqirement is Python3 installed.
+Install docker - https://www.docker.com/get-started 
+
+Allow your user to run docker (linux only):  
+>sudo usermod -G docker -a $USER
 
 
 ## Before run
 
-To run the program you need to login to https://macaddress.io/api and get your api key. Once you get the key, set it as an environment variable:
-
-```
-export MAC_ADRESS_API_KEY=”<your api key>”
-```
-
-You can also set it as a persisting variable in ~/.bash_profile by adding the export command for the environment variable. 
-
+To run the program you need to login to https://macaddress.io/api and get your api key. Once you get the key, you will pass it as an command parameter (see in Run section).
 <br>
 <br>
 
-*If you use Windows you need to use command set instead of export.
 
-## Run
 
-Command line with a mac adress as a parameter:
+## Run using default API key (testing purposes only)
+
+Command with a mac adress as a parameter:
 ```
-$ python3 MACadress.py <mac adress>
+$ docker run mac_company <mac adress>
 ```
 
 for exmple: 
 ```
-python3 MACadress.py 44:38:39:ff:ef:57
+$ docker run mac_company 44:38:39:ff:ef:57
 ```
+
+
+## Run using your API key
+Command with a mac adress as a parameter:
+```
+$ docker run --env MAC_ADRESS_API_KEY=<your_api_key> mac_company <mac adress>
+```
+
 
